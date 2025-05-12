@@ -28,12 +28,38 @@
 
         <div class="right">
             <a href="#home">Shop</a>
-            <a href="#">H</a>
+            <a href="#" class="burger">☰</a>
+        </div>
+         <div class="right-menu">
+            <div class="right-menu-close">×</div>
+            <div class="right-menu-items">
+                <a href="#">MISSION</a>
+                <a href="#">LAUNCHES</a>
+                <a href="#">CAREERS</a>
+                <a href="#">UPDATES</a>
+                <a href="#">SHOP</a>
+                <a href="#">MISSION</a>
+                <a href="#">LAUNCHES</a>
+                <a href="#">CAREERS</a>
+                <a href="#">UPDATES</a>
+                <a href="#">SHOP</a>
+            </div>
         </div>
 
         <div class="hamburger">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> </g></svg>
         </div>
+         <div class="menu">
+            <div class="menu-close">×</div>
+            <div class="menu-items">
+                <a href="#">MISSION</a>
+                <a href="#">LAUNCHES</a>
+                <a href="#">CAREERS</a>
+                <a href="#">UPDATES</a>
+                <a href="#">SHOP</a>
+            </div>
+        </div>
+        
     </nav>
 
     <section class="common first">
@@ -77,4 +103,44 @@
         <a href="#">suppliers</a>
     </footer>
 </body>
-</html>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        const closeMenu = document.querySelector('.menu-close');
+
+        // Open menu when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            menu.classList.add('active');
+        });
+
+        // Close menu when close button is clicked
+        closeMenu.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+
+        /*
+        Optional: Close menu when clicking outside of it
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+   */   
+
+   const burger = document.querySelector('.burger');
+        const rightMenu = document.querySelector('.right-menu');
+        const rightMenuClose = document.querySelector('.right-menu-close');
+
+        // Open right menu when burger is clicked
+        burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            rightMenu.classList.add('active');
+        });
+
+        // Close right menu when close button is clicked
+        rightMenuClose.addEventListener('click', () => {
+            rightMenu.classList.remove('active');
+        });
+
+    </script>
